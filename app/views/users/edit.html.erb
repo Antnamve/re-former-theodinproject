@@ -1,0 +1,25 @@
+<% if @user.errors.any? %>
+  <% @user.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+<% end %>
+
+<%= form_with model: @user do |f| %>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <%= f.submit "Update user!" %>
+<% end %>
+
+<%#= form_with model: @user do |f| %>
+      <%#= f.label :email %>
+      <%#= f.email_field :email, placeholder: 'E-mail' %>
+      <%#= f.label :name %>
+      <%#= f.text_field :username, placeholder: 'Name'%>
+      <%#= f.label :password %>
+      <%#= f.password_field :password %>
+      <%#= f.submit 'Save!' %>
+  <%# end %>
